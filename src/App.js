@@ -8,7 +8,6 @@ function App() {
 
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
-  const [colorToUse, setColor] = useState('');
   const [quotesData, setQuotesData] = useState([]);
 
   const getQuotes = async () => {
@@ -25,7 +24,6 @@ function App() {
       // Fallback to a default quote in case of an error
       setQuote("Life is what happens when you're busy making other plans.");
       setAuthor("John Lennon");
-      setColor('#000');
     }
   };
 
@@ -34,23 +32,21 @@ function App() {
     const randomQuote = quotes[randomIndex];
     setQuote(randomQuote.quote);
     setAuthor(randomQuote.author);
-    setColor(getRandomColor());
-    setRootColors();
+    setRootColors(getRandomColor());
   };
 
   function getRandomColor() {
-    const r = Math.floor(Math.random() * 127 + 100);
-    const g = Math.floor(Math.random() * 127 + 100);
-    const b = Math.floor(Math.random() * 127 + 100);
+    const r = Math.floor(Math.random() * 127 + 110);
+    const g = Math.floor(Math.random() * 127 + 110);
+    const b = Math.floor(Math.random() * 127 + 110);
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
   }
 
   useEffect(() => {
     getQuotes();
-    setRootColors();
   }, []);
 
-  const setRootColors = () => {
+  const setRootColors = (colorToUse) => {
     document.documentElement.style.setProperty('--random-color', colorToUse);
   };
 
@@ -58,7 +54,7 @@ function App() {
     <div className="App" >
       <div id="wrapper">
         <div id="quote-box">
-          <p id="text">{quote}</p>
+          <p id="text"><i class="fa fa-quote-left"> </i>{quote}</p>
           <h5 id="author">-{author}</h5>
           <div className='Buttons'>
             <NewQuote onClick={() => getRandomQuote(quotesData)} />
