@@ -15,6 +15,7 @@ html {
   width: 100%;
   height: 100vh;
   background-color: var(--random-color);
+  transition: background-color 1s ease;
 }
 
 #wrapper {
@@ -29,9 +30,11 @@ html {
   border-radius: 5px;
 }
 
-#wrapper #quote-box #text, #wrapper #quote-box #author {
+#wrapper #quote-box #text,
+#wrapper #quote-box #author {
   color: var(--random-color);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: color 0.5s ease;
 }
 
 #wrapper #quote-box #text {
@@ -50,12 +53,14 @@ html {
   align-items: center;
 }
 
-#wrapper #quote-box .Buttons a, #wrapper #quote-box .Buttons button {
+#wrapper #quote-box .Buttons a,
+#wrapper #quote-box .Buttons button {
   color: white;
   background-color: var(--random-color);
   height: var(--button-height);
   margin: 5px;
   border-radius: 5px;
+  transition: background-color 1s ease;
 }
 
 #wrapper #quote-box .Buttons .social-container {
