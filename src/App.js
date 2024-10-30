@@ -8,7 +8,7 @@ function App() {
 
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
-  const [color, setColor] = useState('');
+  const [colorToUse, setColor] = useState('');
   const [quotesData, setQuotesData] = useState([]);
 
   const getQuotes = async () => {
@@ -34,7 +34,8 @@ function App() {
     const randomQuote = quotes[randomIndex];
     setQuote(randomQuote.quote);
     setAuthor(randomQuote.author);
-    setColor(getRandomColor()); // Set a random color
+    setColor(getRandomColor());
+    setRootColors();
   };
 
   function getRandomColor() {
@@ -46,11 +47,15 @@ function App() {
 
   useEffect(() => {
     getQuotes();
+    setRootColors();
   }, []);
 
+  const setRootColors = () => {
+    document.documentElement.style.setProperty('--random-color', colorToUse);
+  };
 
   return (
-    <div className="App">
+    <div className="App" >
       <div id="wrapper">
         <div id="quote-box">
           <p id="text">{quote}</p>
