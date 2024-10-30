@@ -58,7 +58,7 @@ function App() {
           <p id="text"><i class="fa fa-quote-left"> </i> {quote}</p>
           <h5 id="author">-{author}</h5>
           <div className='Buttons'>
-            <Socials />
+            <Socials quote={quote} author={author}/>
             <NewQuote onClick={() => getRandomQuote(quotesData)} />
           </div>
         </div>
