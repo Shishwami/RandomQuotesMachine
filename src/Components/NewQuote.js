@@ -1,6 +1,6 @@
-function NewQuote() {
+function NewQuote({ onClick }) {
     return (
-        <button id="new-quote">New Quote</button>
+        <button id="new-quote" onClick={onClick}>New Quote</button>
     );
 }
 export default NewQuote;
