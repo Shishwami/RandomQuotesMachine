@@ -7,6 +7,30 @@ import Socials from './Components/Socials';
 
 function App() {
 
+  const colors = [
+    "#DC143C", // Crimson
+    "#001F3F", // Navy Blue
+    "#228B22", // Forest Green
+    "#7851A9", // Royal Purple
+    "#FF4500", // Burnt Orange
+    "#708090", // Slate Gray
+    "#00BFFF", // Deep Sky Blue
+    "#B8860B", // Dark Goldenrod
+    "#800000", // Maroon
+    "#008080", // Teal
+    "#6A5ACD", // Slate Blue
+    "#A52A2A", // Brown
+    "#B22222", // Firebrick
+    "#4682B4", // Steel Blue
+    "#D2691E", // Chocolate
+    "#556B2F", // Dark Olive Green
+    "#8B4513", // Saddle Brown
+    "#9932CC", // Dark Orchid
+    "#FF8C00", // Dark Orange
+    "#2F4F4F", // Dark Slate Gray
+    "#800080", // Purple
+  ];
+
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
   const [quotesData, setQuotesData] = useState([]);
@@ -37,10 +61,8 @@ function App() {
   };
 
   function getRandomColor() {
-    const r = Math.floor(Math.random() * 127 + 100);
-    const g = Math.floor(Math.random() * 127 + 100);
-    const b = Math.floor(Math.random() * 127 + 100);
-    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
   }
 
   useEffect(() => {
@@ -58,7 +80,7 @@ function App() {
           <p id="text"><i class="fa fa-quote-left"> </i> {quote}</p>
           <h5 id="author">-{author}</h5>
           <div className='Buttons'>
-            <Socials quote={quote} author={author}/>
+            <Socials quote={quote} author={author} />
             <NewQuote onClick={() => getRandomQuote(quotesData)} />
           </div>
         </div>
