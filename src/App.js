@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './Components/Footer';
 import { useEffect, useState } from 'react';
 import NewQuote from './Components/NewQuote';
+import Socials from './Components/Socials';
 
 function App() {
 
@@ -54,9 +55,10 @@ function App() {
     <div className="App" >
       <div id="wrapper">
         <div id="quote-box">
-          <p id="text"><i class="fa fa-quote-left"> </i>{quote}</p>
+          <p id="text"><i class="fa fa-quote-left"> </i> {quote}</p>
           <h5 id="author">-{author}</h5>
           <div className='Buttons'>
+            <Socials />
             <NewQuote onClick={() => getRandomQuote(quotesData)} />
           </div>
         </div>
