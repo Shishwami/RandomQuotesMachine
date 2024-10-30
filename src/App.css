@@ -4,6 +4,14 @@ html {
   margin: 0;
 }
 
+:root {
+  --button-height: 35px;
+}
+
+* {
+  outline: red 1px solid;
+}
+
 .App {
   width: 100%;
   height: 100vh;
@@ -13,9 +21,57 @@ html {
   justify-content: center;
 }
 
-#wrapper #quote-box {
+#wrapper {
+  width: fit-content;
   width: 100%;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+#wrapper #quote-box {
+  padding: 20px 25px;
   background-color: white;
+}
+
+#wrapper #quote-box #text {
+  color: var(--random-color);
+  font-size: large;
+  text-align: center;
+}
+
+#wrapper #quote-box #author {
+  color: var(--random-color);
+  text-align: right;
+  margin: 20px;
+}
+
+#wrapper #quote-box .Buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#wrapper #quote-box .Buttons a,
+#wrapper #quote-box .Buttons button {
+  color: white;
+  background-color: var(--random-color);
+  height: var(--button-height);
+  margin: 5px;
+}
+
+#wrapper #quote-box .Buttons .social-container {
+  display: flex;
+}
+
+#wrapper #quote-box .Buttons .social-container a {
+  display: flex;
+  width: var(--button-height);
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#wrapper #quote-box .Buttons #new-quote {
+  border: none;
+  padding: 0px 15px;
 }
