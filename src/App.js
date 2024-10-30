@@ -37,9 +37,9 @@ function App() {
   };
 
   function getRandomColor() {
-    const r = Math.floor(Math.random() * 127 + 110);
-    const g = Math.floor(Math.random() * 127 + 110);
-    const b = Math.floor(Math.random() * 127 + 110);
+    const r = Math.floor(Math.random() * 127 + 100);
+    const g = Math.floor(Math.random() * 127 + 100);
+    const b = Math.floor(Math.random() * 127 + 100);
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
   }
 
