@@ -28,3 +28,4 @@ src/reportWebVitals.js
 #Ignore tests
 src/App.test.js
 src/setupTests.js
+public/index.html
