@@ -9,7 +9,7 @@ This project is a web application that displays a randomly selected quote and it
 
 ## Demo
 
-[Live Demo of Random Quote Machine](shishwami.github.io/randomquotesmachine)
+[Live Demo of Random Quote Machine](https://shishwami.github.io/RandomQuotesMachine/)
 
 ## User Stories
 
